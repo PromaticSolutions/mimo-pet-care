@@ -5,9 +5,11 @@ import { CrystalCounter } from "@/components/CrystalCounter";
 import { ShopPreview } from "@/components/ShopPreview";
 import { ExplorationCard } from "@/components/ExplorationCard";
 import { Button } from "@/components/ui/button";
-import { Menu, Settings, Users } from "lucide-react";
+import { Menu, Settings, Users, Crown } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Index = () => {
+  const navigate = useNavigate();
   const [crystals, setCrystals] = useState(0);
   const [energy, setEnergy] = useState(75);
   const [happiness, setHappiness] = useState(85);
@@ -33,6 +35,14 @@ const Index = () => {
             
             <div className="flex items-center gap-2">
               <CrystalCounter count={crystals} />
+              <Button 
+                size="icon" 
+                variant="ghost" 
+                className="rounded-full"
+                onClick={() => navigate("/premium")}
+              >
+                <Crown className="w-5 h-5 text-primary" />
+              </Button>
               <Button size="icon" variant="ghost" className="rounded-full">
                 <Users className="w-5 h-5" />
               </Button>

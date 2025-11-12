@@ -1,8 +1,11 @@
 import { ShoppingBag } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 export const ShopPreview = () => {
+  const navigate = useNavigate();
+  
   const items = [
     { id: 1, name: "Chapéu de Sol 🌞", price: 50, emoji: "🎩" },
     { id: 2, name: "Cachecol Fofo 🧣", price: 30, emoji: "🧣" },
@@ -31,7 +34,10 @@ export const ShopPreview = () => {
         ))}
       </div>
 
-      <Button className="w-full mt-4 bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl">
+      <Button 
+        onClick={() => navigate("/shop")}
+        className="w-full mt-4 bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl"
+      >
         Ver Todos os Itens
       </Button>
     </Card>
