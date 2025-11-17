@@ -93,7 +93,7 @@ const Exploration = () => {
           <div className="flex items-center justify-between">
             <Button
               variant="ghost"
-              onClick={() => navigate("/app")}
+              onClick={() => navigate("/")}
               className="rounded-full"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
