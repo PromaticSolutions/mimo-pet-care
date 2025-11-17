@@ -1,8 +1,11 @@
 import { Compass, Clock } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 export const ExplorationCard = () => {
+  const navigate = useNavigate();
+  
   return (
     <Card className="gradient-sunset shadow-float border-2 border-border/50 p-6">
       <div className="flex items-center gap-2 mb-3">
@@ -33,10 +36,10 @@ export const ExplorationCard = () => {
       </div>
 
       <Button 
+        onClick={() => navigate("/exploration")}
         className="w-full bg-accent hover:bg-accent/90 text-accent-foreground rounded-xl"
-        disabled
       >
-        Em breve! ✨
+        Explorar Agora
       </Button>
     </Card>
   );

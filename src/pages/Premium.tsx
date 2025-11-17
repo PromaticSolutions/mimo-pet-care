@@ -9,13 +9,25 @@ const Premium = () => {
 
   const subscriptionPlans = [
     {
+      name: "Free",
+      price: "R$ 0",
+      period: "/mês",
+      color: "from-muted/20 to-secondary/20",
+      icon: Sparkles,
+      features: [
+        "3 tarefas básicas por dia",
+        "Acesso limitado a roupas",
+        "Explorações básicas",
+      ],
+    },
+    {
       name: "Mimo",
       price: "R$ 9,90",
       period: "/mês",
       color: "from-primary/20 to-accent/20",
       icon: Sparkles,
       features: [
-        "Mais missões diárias",
+        "Missões diárias ilimitadas",
         'Modo "Reflexão" (diário de humor)',
         "Pet não adoece se faltar 1 dia",
         "Bônus semanais (moedas + skins)",
@@ -85,7 +97,7 @@ const Premium = () => {
           <h3 className="text-2xl font-bold text-center">
             Planos de Assinatura
           </h3>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-3 gap-6">
             {subscriptionPlans.map((plan) => (
               <Card
                 key={plan.name}
